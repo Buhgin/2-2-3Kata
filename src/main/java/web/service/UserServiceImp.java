@@ -29,14 +29,18 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public void delete(User user) {
+    public void delete(Long id) {
 
-        userDao.delete(user);
+        userDao.delete(id);
     }
 
     @Transactional
     @Override
     public void update(User user) {
+        User user1 = userDao.getById(user.getId());
+        user1.setEmail(user.getEmail());
+        user1.setLastName(user.getLastName());
+        user1.setFirstName(user.getFirstName());
         userDao.update(user);
 
     }

@@ -30,7 +30,7 @@ public class UserController {
 
     @PostMapping("/remove")
     public String removeUser(@RequestParam Long id, RedirectAttributes redirectAttributes) {
-        userService.delete(userService.getById(id));
+        userService.delete(id);
         redirectAttributes.addFlashAttribute("successMessage", "User removed successfully!");
         return "redirect:/users";
     }
