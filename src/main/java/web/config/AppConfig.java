@@ -1,4 +1,4 @@
-package hiber.config;
+package web.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan(value = "hiber")
+@ComponentScan(value = "web")
 public class AppConfig {
 
     @Autowired
@@ -50,7 +50,7 @@ public class AppConfig {
         props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 
         factoryBean.setJpaProperties(props);
-        factoryBean.setPackagesToScan("hiber.model");
+        factoryBean.setPackagesToScan("web.model");
         return factoryBean;
     }
 

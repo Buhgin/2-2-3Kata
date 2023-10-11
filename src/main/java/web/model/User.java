@@ -1,15 +1,14 @@
-package hiber.model;
+package web.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+
 @Getter
 @Setter
 @RequiredArgsConstructor
 
+@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
